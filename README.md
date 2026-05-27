@@ -48,7 +48,6 @@ Editar .env con usuario, contraseña y DSN de Oracle
 Ejecutar scripts/ddl.sql y luego scripts/dml.sql
 5. Correr la app
 streamlit run app/main.py
-```
 
 La app queda disponible en `http://localhost:8501`.
 
