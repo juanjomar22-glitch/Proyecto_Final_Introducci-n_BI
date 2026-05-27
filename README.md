@@ -55,17 +55,17 @@ La app queda disponible en `http://localhost:8501`.
 
 ## Capturas de pantalla
 
-!\[Consultar clientes](imagenes/Consultar\_clientes.png)
+!\[Consultar clientes](/Consultar\_clientes.png)
 
-!\[Inventario general](imagenes/Inventario\_General.png)
+!\[Inventario general](/Inventario\_General.png)
 
-!\[Pedidos](imagenes/Pedidos.png)
+!\[Pedidos](/Pedidos.png)
 
-!\[Productos bajo stock](imagenes/Productos\_bajo\_stock.png)
+!\[Productos bajo stock](/Productos\_bajo\_stock.png)
 
-!\[Registrar clientes](imagenes/Registrar\_Clientes.png)
+!\[Registrar clientes](/Registrar\_Clientes.png)
 
-!\[Registrar producto](imagenes/Registrar\_Producto.png)
+!\[Registrar producto](/Registrar\_Producto.png)
 
 
 
