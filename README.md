@@ -1,89 +1,95 @@
-Bodega BI — Sistema de Inventarios y Pedidos
+# Bodega BI — Sistema de Inventarios y Pedidos
 
 Aplicación web para gestionar el inventario, los clientes y los pedidos de una bodega distribuidora. Desarrollada con Streamlit y conectada a Oracle Cloud.
+
 ---
-Integrantes
 
-Jose Miguel Jaramillo G
+## Integrantes
 
-Juan José Márquez H
+- Jose Miguel Jaramillo G
+- Juan José Márquez H
+
 ---
-Dominio elegido
 
-Bodega / Gestión de inventario y pedidos
+## Dominio elegido
+
+**Bodega / Gestión de inventario y pedidos**
 
 Se eligió este dominio porque representa un caso de negocio real y cotidiano: una bodega distribuidora que necesita controlar su inventario de productos, gestionar sus proveedores y clientes, registrar pedidos y detectar alertas de stock bajo. El modelo requiere múltiples entidades relacionadas (proveedores, productos, clientes, pedidos y detalle de pedidos), lo que justifica una base de datos relacional con restricciones de integridad bien definidas.
----
-
-Diagrama ERD
-
-
-
-JARA
-
-
-
-
-Tablas y restricciones
-
-El modelo tiene 5 tablas: `bd\_proveedores`, `bd\_clientes`, `bd\_productos`, `bd\_pedidos` y `bd\_detalle\_pedido`.
-
-bd_proveedores — guarda los proveedores que abastecen la bodega. El NIT es único para que no se pueda registrar el mismo proveedor dos veces.
-
-bd_clientes — registra clientes (personas o empresas). La combinación de tipo y número de documento es única, porque distintos tipos de documento pueden compartir números.
-
-bd_productos — catálogo de productos. Cada uno tiene un código único, está vinculado a un proveedor y registra stock actual y mínimo. El precio y el stock no pueden ser negativos.
-
-bd_pedidos — encabezado de cada pedido. Está vinculado a un cliente y tiene tres estados posibles: `PENDIENTE`, `DESPACHADO` o `CANCELADO`.
-
-bd_detalle_pedido — las líneas de productos dentro de un pedido. No se puede repetir el mismo producto en un mismo pedido, y la cantidad debe ser mayor a cero.
 
 ---
-Reglas de negocio implementadas
 
-NIT único en proveedores: evita registrar al mismo proveedor dos veces.
+## Diagrama ERD
 
-Documento único en clientes: identifica a cada cliente de forma inequívoca.
-
-Código de producto único: es la referencia interna de cada ítem en la bodega.
-
-Precio y stock no negativos: no tienen sentido valores negativos en contexto real.
-
-Cantidad > 0 en detalle: pedir cero unidades de algo no tiene lógica de negocio.
-
-Estados controlados con CHECK: solo se aceptan valores definidos en el proceso (activo/inactivo, pendiente/despachado/cancelado), evitando datos inconsistentes.
-
-Claves foráneas: un producto siempre pertenece a un proveedor existente; un pedido siempre pertenece a un cliente existente; el detalle siempre apunta a pedidos y productos reales.
+![Diagrama ERD](erd.png)
 
 ---
-Cómo ejecutar la aplicación
 
-1. Clonar el repositorio
+## Tablas y restricciones
 
+El modelo tiene 5 tablas:
+
+- **`bd_proveedores`** — guarda los proveedores que abastecen la bodega. El NIT es único para que no se pueda registrar el mismo proveedor dos veces.
+- **`bd_clientes`** — registra clientes (personas o empresas). La combinación de tipo y número de documento es única, porque distintos tipos de documento pueden compartir números.
+- **`bd_productos`** — catálogo de productos. Cada uno tiene un código único, está vinculado a un proveedor y registra stock actual y mínimo. El precio y el stock no pueden ser negativos.
+- **`bd_pedidos`** — encabezado de cada pedido. Está vinculado a un cliente y tiene tres estados posibles: `PENDIENTE`, `DESPACHADO` o `CANCELADO`.
+- **`bd_detalle_pedido`** — las líneas de productos dentro de un pedido. No se puede repetir el mismo producto en un mismo pedido, y la cantidad debe ser mayor a cero.
+
+---
+
+## Reglas de negocio implementadas
+
+- **NIT único en proveedores:** evita registrar al mismo proveedor dos veces.
+- **Documento único en clientes:** identifica a cada cliente de forma inequívoca.
+- **Código de producto único:** es la referencia interna de cada ítem en la bodega.
+- **Precio y stock no negativos:** no tienen sentido valores negativos en contexto real.
+- **Cantidad > 0 en detalle:** pedir cero unidades de algo no tiene lógica de negocio.
+- **Estados controlados con CHECK:** solo se aceptan valores definidos en el proceso (activo/inactivo, pendiente/despachado/cancelado), evitando datos inconsistentes.
+- **Claves foráneas:** un producto siempre pertenece a un proveedor existente; un pedido siempre pertenece a un cliente existente; el detalle siempre apunta a pedidos y productos reales.
+
+---
+
+## Cómo ejecutar la aplicación
+
+**Requisitos:** Python 3.10+, Oracle Instant Client 23.x y acceso a Oracle Cloud.
+
+**1. Clonar el repositorio**
+```bash
 git clone https://github.com/tu_usuario/bodega-bi.git
 cd bodega-bi
+```
 
-2. Instalar dependencias
-
+**2. Instalar dependencias**
+```bash
 pip install -r requirements.txt
+```
 
-3. Configurar credenciales   
+**3. Configurar credenciales**
+```bash
 cp .env.example .env
-Editar .env con usuario, contraseña y DSN de Oracle
+```
+Editar `.env` con usuario, contraseña y DSN de Oracle.
 
-4. Crear tablas y cargar datos de prueba (en Oracle SQL Developer)
+**4. Crear tablas y cargar datos de prueba**
 
-Ejecutar scripts/ddl.sql y luego scripts/dml.sql
+Ejecutar en Oracle SQL Developer en este orden:
+```sql
+@ddl.sql
+@dml.sql
+```
 
-5. Correr la app
-streamlit run app/main.py
+**5. Correr la aplicación**
+```bash
+streamlit run main.py
+```
 
 La app queda disponible en `http://localhost:8501`.
 
-\---
+> El archivo `.env` contiene credenciales y **no debe subirse al repositorio**.
+
+---
 
 ## Capturas de pantalla
-
 
 ![Consultar clientes](imagenes/Consultar_clientes.png)
 
@@ -97,15 +103,15 @@ La app queda disponible en `http://localhost:8501`.
 
 ![Registrar producto](imagenes/Registrar_Producto.png)
 
-
+---
 
 ## Reflexión del equipo
 
+**Dificultades encontradas:**
+- 
 
-
-
-
-
+**Aprendizajes:**
+-
 
 
 
