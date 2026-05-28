@@ -3,6 +3,7 @@ Aplicación web para gestionar el inventario, los clientes y los pedidos de una 
 ---
 Integrantes
 Jose Miguel Jaramillo G
+
 Juan José Márquez H
 ---
 Dominio elegido
