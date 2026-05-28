@@ -85,7 +85,6 @@ streamlit run main.py
 
 La app queda disponible en `http://localhost:8501`.
 
-> El archivo `.env` contiene credenciales y **no debe subirse al repositorio**.
 
 ---
 
