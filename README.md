@@ -26,6 +26,26 @@ El modelo se centra en cinco entidades. Proveedores alimenta productos; clientes
 
 ![Diagrama ERD](imagenes/Imagen1.png)
 
+Figura 1. Diagrama entidad-relacion del sistema Bodega BI.
+Diccionario breve del modelo
+Entidad	Descripcion
+bd_proveedores	Almacena datos de proveedores y su estado operativo.
+bd_productos	Registra productos, categoria, precio, proveedor y niveles de stock.
+bd_clientes	Contiene clientes con documento unico y estado.
+bd_pedidos	Representa pedidos realizados por clientes, fecha, estado y observacion.
+bd_detalle_pedido	Resuelve la relacion muchos-a-muchos entre pedidos y productos.
+
+Relaciones principales
+Relacion	Interpretacion
+bd_proveedores 1:N bd_productos	Un proveedor puede suministrar muchos productos; cada producto pertenece a un proveedor.
+bd_clientes 1:N bd_pedidos	Un cliente puede tener varios pedidos; cada pedido pertenece a un cliente.
+bd_pedidos 1:N bd_detalle_pedido	Un pedido puede tener varios renglones de detalle.
+bd_productos 1:N bd_detalle_pedido	Un producto puede aparecer en muchos detalles de pedido.
+
+ 
+
+
+
 ---
 
 ## Tablas y restricciones
