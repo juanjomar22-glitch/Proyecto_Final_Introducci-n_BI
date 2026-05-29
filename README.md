@@ -21,6 +21,9 @@ Se eligió este dominio porque representa un caso de negocio real y cotidiano: u
 
 ## Diagrama ERD
 El modelo se centra en cinco entidades. Proveedores alimenta productos; clientes generan pedidos; cada pedido puede contener varios productos por medio de la tabla detalle.
+
+
+
 ![Diagrama ERD](imagenes/Imagen1.png)
 
 ---
