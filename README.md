@@ -20,7 +20,7 @@ Se eligió este dominio porque representa un caso de negocio real y cotidiano: u
 ---
 
 ## Diagrama ERD
-
+El modelo se centra en cinco entidades. Proveedores alimenta productos; clientes generan pedidos; cada pedido puede contener varios productos por medio de la tabla detalle.
 ![Diagrama ERD](erd.png)
 
 ---
@@ -107,10 +107,21 @@ La app queda disponible en `http://localhost:8501`.
 ## Reflexión del equipo
 
 **Dificultades encontradas:**
-- 
+- Dificultades encontradas
+-	Conectar la aplicacion con Oracle requirio separar credenciales, wallet e Instant Client para evitar datos sensibles en el codigo.
+-	El diseno relacional exigio cuidar llaves primarias, foraneas, restricciones de unicidad y estados validos para mantener integridad.
+-	Fue necesario convertir consultas SQL en informacion clara para el usuario final, no solo tablas tecnicas.
+-	La interfaz inicial funcionaba, pero necesitaba jerarquia visual, metricas y filtros para sentirse como una herramienta BI completa.
+- Las operaciones de registro demandaron validaciones y manejo de errores para que la app no fallara ante datos incompletos o duplicados.
+
 
 **Aprendizajes:**
--
+-	Un buen proyecto de base de datos no termina en el DDL: tambien necesita consultas utiles, visualizacion y criterios de negocio.
+-	Las restricciones SQL reducen errores desde la fuente y hacen que la aplicacion sea mas confiable.
+-	Streamlit permite construir rapidamente tableros funcionales, pero la calidad mejora mucho al cuidar estados, filtros y organizacion visual.
+-	Separar configuracion en `.env` facilita mover el proyecto entre equipos sin exponer credenciales.
+-	El ERD ayuda a explicar el sistema a personas tecnicas y no tecnicas, porque muestra las dependencias reales del negocio.
+
 
 
 
