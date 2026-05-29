@@ -169,11 +169,4 @@ La app queda disponible en `http://localhost:8501`.
 
 
 
-Jara
-
-
-
-
-
-
 
