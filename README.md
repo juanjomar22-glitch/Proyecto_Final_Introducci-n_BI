@@ -22,7 +22,7 @@ Se eligió este dominio porque representa un caso de negocio real y cotidiano: u
 ## Estructura del repositorio
 
 ```
-bodega-bi/
+Proyecto_Final_Introduccion_BI/
 ├── app/
 │   ├── .env.example
 │   └── main.py
