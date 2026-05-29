@@ -21,6 +21,7 @@ Se eligió este dominio porque representa un caso de negocio real y cotidiano: u
 
 ## Estructura del repositorio
 
+```
 bodega-bi/
 ├── app/
 │   ├── .env.example
@@ -33,7 +34,7 @@ bodega-bi/
 │   └── queries.sql
 ├── README.md
 └── requirements.txt
-
+```
 ---
 
 ## Diagrama ERD
