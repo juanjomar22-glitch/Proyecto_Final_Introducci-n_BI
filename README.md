@@ -19,6 +19,23 @@ Se eligió este dominio porque representa un caso de negocio real y cotidiano: u
 
 ---
 
+## Estructura del repositorio
+
+bodega-bi/
+├── app/
+│   ├── .env.example
+│   └── main.py
+├── imagenes/
+│   └── (capturas de pantalla)
+├── scripts/
+│   ├── ddl.sql
+│   ├── dml.sql
+│   └── queries.sql
+├── README.md
+└── requirements.txt
+
+---
+
 ## Diagrama ERD
 El modelo se centra en cinco entidades. Proveedores alimenta productos; clientes generan pedidos; cada pedido puede contener varios productos por medio de la tabla detalle.
 
